@@ -16,7 +16,12 @@ from mpl_toolkits.mplot3d import art3d
 #
 
 #load matrix of normalized expression.
-file_name='takrub_htexon_degs_vsd_norm_data_n4.txt' #file containing expression data.
+
+if len(sys.argv)>1:
+    file_name=sys.argv[1]
+else:
+    file_name='expression_data.txt' #file containing expression data.
+    
 li_data=list()
 li_headers=list()
 with open(file_name,'r') as f:
